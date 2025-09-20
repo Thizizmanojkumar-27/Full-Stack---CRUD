@@ -1,0 +1,199 @@
+/* Full Page Vibrant Gradient Background Animation */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #ff3c00, #ff0080, #7d00ff, #00c6ff, #00ff72);
+  background-size: 500% 500%;
+  animation: gradientBG 10s ease infinite;
+  color: black;
+}
+
+/* Animated Gradient Keyframes */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Main App Container - Bigger Glass Effect */
+.app {
+  width: 95%;
+  max-width: 1000px;   /* bigger form */
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Title */
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  color: black;
+}
+
+/* Form */
+.create-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.create-form input {
+  padding: 16px 20px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  width: 280px;              /* bigger inputs */
+  background: rgba(255, 255, 255, 0.85);
+  color: black;
+  font-weight: 500;
+}
+
+.create-form input::placeholder {
+  color: #555;
+}
+
+.create-form button {
+  padding: 16px 28px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff0080, #7928ca);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.create-form button:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+thead {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+th,
+td {
+  padding: 16px 20px;
+  font-size: 16px;
+  color: black;
+  text-align: left;
+}
+
+tbody tr {
+  transition: background 0.3s ease;
+}
+
+tbody tr:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Action Buttons */
+button.edit,
+button.delete {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 10px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button.edit {
+  background: linear-gradient(135deg, #00b09b, #96c93d); /* green gradient */
+}
+
+button.edit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(150, 201, 61, 0.4);
+}
+
+button.delete {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b); /* red gradient */
+}
+
+button.delete:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(255, 65, 108, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .create-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .create-form input {
+    width: 90%;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  td {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #333;
+  }
+}
